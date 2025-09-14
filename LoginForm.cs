@@ -1,4 +1,5 @@
 using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace StudentManagementSystem
@@ -12,48 +13,92 @@ namespace StudentManagementSystem
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            // Set form properties
-            this.Text = "Student Management System - Login";
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            ConfigureForm();
+        }
+
+        private void ConfigureForm()
+        {
+            Text = "Student Management System - Login";
+            StartPosition = FormStartPosition.CenterScreen;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            string username = UsernameTextBox.Text.Trim();
-            string password = PasswordTextBox.Text;
+            if (!ValidateInput()) return;
 
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (AuthenticateUser())
             {
-                MessageBox.Show("Please enter both username and password.", "Login Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // TODO: Implement actual authentication logic here
-            // For now, using simple validation
-            if (username == "admin" && password == "admin")
-            {
-                MessageBox.Show("Login successful!", "Success",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // TODO: Open main application form
-                // this.Hide();
-                // MainForm mainForm = new MainForm();
-                // mainForm.Show();
+                ShowSuccess();
+                // TODO: Navigate to main form
+                // NavigateToMainForm();
             }
             else
             {
-                MessageBox.Show("Invalid username or password.", "Login Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                PasswordTextBox.Clear();
-                PasswordTextBox.Focus();
+                ShowError();
             }
         }
 
+        private bool ValidateInput()
+        {
+            if (string.IsNullOrWhiteSpace(UsernameTextBox.Text) || 
+                string.IsNullOrWhiteSpace(PasswordTextBox.Text))
+            {
+                MessageBox.Show("Please enter both username and password.", "Login Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        private bool AuthenticateUser()
+        {
+            string connectionString = "Data Source=DESKTOP-CF5UPHT\\SQLEXPRESS;Initial Catalog=Student;Integrated Security=True;Encrypt=False";
+
+            try
+            {
+                using SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+
+                string query = "SELECT loginId, username, role FROM Logins WHERE username = @username AND password = @password";
+
+                using SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@username", UsernameTextBox.Text.Trim());
+                command.Parameters.AddWithValue("@password", PasswordTextBox.Text);
+
+                using SqlDataReader reader = command.ExecuteReader();
+                return reader.Read(); // Returns true if a matching record is found
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Database connection error: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        private void ShowSuccess()
+        {
+            MessageBox.Show("Login successful!", "Success",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void ShowError()
+        {
+            MessageBox.Show("Invalid username or password.", "Login Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            PasswordTextBox.Clear();
+            PasswordTextBox.Focus();
+        }
+
         private void ClearButton_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
+
+        private void ClearFields()
         {
             UsernameTextBox.Clear();
             PasswordTextBox.Clear();
@@ -62,27 +107,23 @@ namespace StudentManagementSystem
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-        private void TitleLabel_Click(object sender, EventArgs e)
+        // Add the missing event handlers that are referenced in the designer
+        private void label1_Click(object sender, EventArgs e)
         {
-
+            // Empty event handler for label1 click
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            // Empty event handler for label2 click
         }
 
         private void UsernameTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            // Empty event handler for username textbox text changed
         }
     }
 }
