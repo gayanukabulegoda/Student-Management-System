@@ -32,8 +32,7 @@ namespace StudentManagementSystem
             if (AuthenticateUser())
             {
                 ShowSuccess();
-                // TODO: Navigate to main form
-                // NavigateToMainForm();
+                NavigateToRegistrationForm();
             }
             else
             {
@@ -91,6 +90,14 @@ namespace StudentManagementSystem
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             PasswordTextBox.Clear();
             PasswordTextBox.Focus();
+        }
+
+        private void NavigateToRegistrationForm()
+        {
+            this.Hide();
+            RegistrationForm registrationForm = new RegistrationForm();
+            registrationForm.ShowDialog();
+            this.Close();
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
