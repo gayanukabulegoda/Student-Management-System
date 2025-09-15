@@ -76,7 +76,7 @@ namespace StudentManagementSystem
             // logoutLinkLabel
             // 
             logoutLinkLabel.AutoSize = true;
-            logoutLinkLabel.Location = new Point(35, 79);
+            logoutLinkLabel.Location = new Point(43, 45);
             logoutLinkLabel.Margin = new Padding(4, 0, 4, 0);
             logoutLinkLabel.Name = "logoutLinkLabel";
             logoutLinkLabel.Size = new Size(45, 15);
@@ -88,8 +88,7 @@ namespace StudentManagementSystem
             // exitLinkLabel
             // 
             exitLinkLabel.AutoSize = true;
-            exitLinkLabel.Location = new Point(875, 669);
-            exitLinkLabel.Margin = new Padding(4, 0, 4, 0);
+            exitLinkLabel.Location = new Point(875, 669);  // Right bottom corner
             exitLinkLabel.Name = "exitLinkLabel";
             exitLinkLabel.Size = new Size(26, 15);
             exitLinkLabel.TabIndex = 2;
@@ -101,7 +100,7 @@ namespace StudentManagementSystem
             // 
             studentRegistrationGroupBox.Controls.Add(regNoLabel);
             studentRegistrationGroupBox.Controls.Add(regNoComboBox);
-            studentRegistrationGroupBox.Location = new Point(38, 123);
+            studentRegistrationGroupBox.Location = new Point(51, 123);
             studentRegistrationGroupBox.Margin = new Padding(4, 3, 4, 3);
             studentRegistrationGroupBox.Name = "studentRegistrationGroupBox";
             studentRegistrationGroupBox.Padding = new Padding(4, 3, 4, 3);
@@ -141,7 +140,7 @@ namespace StudentManagementSystem
             basicDetailsGroupBox.Controls.Add(genderLabel);
             basicDetailsGroupBox.Controls.Add(maleRadioButton);
             basicDetailsGroupBox.Controls.Add(femaleRadioButton);
-            basicDetailsGroupBox.Location = new Point(399, 79);
+            basicDetailsGroupBox.Location = new Point(421, 77);
             basicDetailsGroupBox.Margin = new Padding(4, 3, 4, 3);
             basicDetailsGroupBox.Name = "basicDetailsGroupBox";
             basicDetailsGroupBox.Padding = new Padding(4, 3, 4, 3);
@@ -249,7 +248,7 @@ namespace StudentManagementSystem
             contactDetailsGroupBox.Controls.Add(mobilePhoneTextBox);
             contactDetailsGroupBox.Controls.Add(homePhoneLabel);
             contactDetailsGroupBox.Controls.Add(homePhoneTextBox);
-            contactDetailsGroupBox.Location = new Point(35, 252);
+            contactDetailsGroupBox.Location = new Point(55, 252);
             contactDetailsGroupBox.Margin = new Padding(4, 3, 4, 3);
             contactDetailsGroupBox.Name = "contactDetailsGroupBox";
             contactDetailsGroupBox.Padding = new Padding(4, 3, 4, 3);
@@ -339,7 +338,7 @@ namespace StudentManagementSystem
             parentDetailsGroupBox.Controls.Add(nicTextBox);
             parentDetailsGroupBox.Controls.Add(contactNoLabel);
             parentDetailsGroupBox.Controls.Add(contactNoTextBox);
-            parentDetailsGroupBox.Location = new Point(35, 407);
+            parentDetailsGroupBox.Location = new Point(57, 407);
             parentDetailsGroupBox.Margin = new Padding(4, 3, 4, 3);
             parentDetailsGroupBox.Name = "parentDetailsGroupBox";
             parentDetailsGroupBox.Padding = new Padding(4, 3, 4, 3);
@@ -404,7 +403,7 @@ namespace StudentManagementSystem
             // 
             // registerButton
             // 
-            registerButton.Location = new Point(117, 541);
+            registerButton.Location = new Point(189, 541);
             registerButton.Margin = new Padding(4, 3, 4, 3);
             registerButton.Name = "registerButton";
             registerButton.Size = new Size(88, 27);
@@ -415,7 +414,7 @@ namespace StudentManagementSystem
             // 
             // updateButton
             // 
-            updateButton.Location = new Point(233, 541);
+            updateButton.Location = new Point(305, 541);
             updateButton.Margin = new Padding(4, 3, 4, 3);
             updateButton.Name = "updateButton";
             updateButton.Size = new Size(88, 27);
@@ -426,7 +425,7 @@ namespace StudentManagementSystem
             // 
             // clearButton
             // 
-            clearButton.Location = new Point(467, 541);
+            clearButton.Location = new Point(539, 541);
             clearButton.Margin = new Padding(4, 3, 4, 3);
             clearButton.Name = "clearButton";
             clearButton.Size = new Size(88, 27);
@@ -437,7 +436,7 @@ namespace StudentManagementSystem
             // 
             // deleteButton
             // 
-            deleteButton.Location = new Point(583, 541);
+            deleteButton.Location = new Point(655, 541);
             deleteButton.Margin = new Padding(4, 3, 4, 3);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(88, 27);
@@ -450,12 +449,12 @@ namespace StudentManagementSystem
             // 
             registrationDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             registrationDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            registrationDataGridView.Location = new Point(35, 587);
+            registrationDataGridView.Location = new Point(25, 587);
             registrationDataGridView.Margin = new Padding(4, 3, 4, 3);
             registrationDataGridView.Name = "registrationDataGridView";
             registrationDataGridView.ReadOnly = true;
             registrationDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            registrationDataGridView.Size = new Size(875, 173);
+            registrationDataGridView.Size = new Size(884, 173);
             registrationDataGridView.TabIndex = 11;
             // 
             // RegistrationForm

@@ -9,7 +9,16 @@ namespace StudentManagementSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ConfigureForm();
+        }
 
+        private void ConfigureForm()
+        {
+            Text = "Student Management System - Welcome";
+            StartPosition = FormStartPosition.CenterScreen;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
