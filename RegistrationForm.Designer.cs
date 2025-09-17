@@ -19,7 +19,6 @@ namespace StudentManagementSystem
         {
             titleLabel = new Label();
             logoutLinkLabel = new LinkLabel();
-            exitLinkLabel = new LinkLabel();
             studentRegistrationGroupBox = new GroupBox();
             regNoLabel = new Label();
             regNoComboBox = new ComboBox();
@@ -84,17 +83,6 @@ namespace StudentManagementSystem
             logoutLinkLabel.TabStop = true;
             logoutLinkLabel.Text = "Logout";
             logoutLinkLabel.LinkClicked += LogoutLinkLabel_LinkClicked;
-            // 
-            // exitLinkLabel
-            // 
-            exitLinkLabel.AutoSize = true;
-            exitLinkLabel.Location = new Point(875, 669);  // Right bottom corner
-            exitLinkLabel.Name = "exitLinkLabel";
-            exitLinkLabel.Size = new Size(26, 15);
-            exitLinkLabel.TabIndex = 2;
-            exitLinkLabel.TabStop = true;
-            exitLinkLabel.Text = "Exit";
-            exitLinkLabel.LinkClicked += ExitLinkLabel_LinkClicked;
             // 
             // studentRegistrationGroupBox
             // 
@@ -461,6 +449,7 @@ namespace StudentManagementSystem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.AliceBlue;
             ClientSize = new Size(933, 779);
             Controls.Add(registrationDataGridView);
             Controls.Add(deleteButton);
@@ -471,7 +460,6 @@ namespace StudentManagementSystem
             Controls.Add(contactDetailsGroupBox);
             Controls.Add(basicDetailsGroupBox);
             Controls.Add(studentRegistrationGroupBox);
-            Controls.Add(exitLinkLabel);
             Controls.Add(logoutLinkLabel);
             Controls.Add(titleLabel);
             Margin = new Padding(4, 3, 4, 3);
@@ -496,7 +484,6 @@ namespace StudentManagementSystem
 
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.LinkLabel logoutLinkLabel;
-        private System.Windows.Forms.LinkLabel exitLinkLabel;
         private System.Windows.Forms.GroupBox studentRegistrationGroupBox;
         private System.Windows.Forms.Label regNoLabel;
         private System.Windows.Forms.ComboBox regNoComboBox;

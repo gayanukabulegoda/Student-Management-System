@@ -114,21 +114,5 @@ namespace StudentManagementSystem
         {
             Close();
         }
-
-        // Add the missing event handlers that are referenced in the designer
-        private void label1_Click(object sender, EventArgs e)
-        {
-            // Empty event handler for label1 click
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            // Empty event handler for label2 click
-        }
-
-        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            // Empty event handler for username textbox text changed
-        }
     }
 }

@@ -7,7 +7,7 @@ namespace StudentManagementSystem
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void WelcomeForm_Load(object sender, EventArgs e)
         {
             ConfigureForm();
         }
@@ -19,21 +19,6 @@ namespace StudentManagementSystem
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void LogInButton_Click(object sender, EventArgs e)

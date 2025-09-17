@@ -191,17 +191,6 @@ namespace StudentManagementSystem
             }
         }
 
-        private void ExitLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirm Exit", 
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
         private void regNoComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (regNoComboBox.SelectedItem != null)

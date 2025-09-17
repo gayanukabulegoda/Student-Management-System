@@ -41,12 +41,14 @@
             // 
             LogInButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             LogInButton.BackColor = Color.PaleTurquoise;
+            LogInButton.FlatStyle = FlatStyle.Flat;
+            LogInButton.FlatAppearance.BorderSize = 0;
             LogInButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LogInButton.Location = new Point(422, 419);
             LogInButton.Name = "LogInButton";
             LogInButton.Size = new Size(125, 42);
             LogInButton.TabIndex = 0;
-            LogInButton.Text = "LogIn";
+            LogInButton.Text = "Let's Go";
             LogInButton.UseVisualStyleBackColor = false;
             LogInButton.Click += LogInButton_Click;
             // 
@@ -60,18 +62,19 @@
             label1.Size = new Size(583, 54);
             label1.TabIndex = 1;
             label1.Text = "Welcome to Skills International";
-            label1.Click += label1_Click;
             // 
             // ExitButton
             // 
             ExitButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ExitButton.BackColor = Color.Bisque;
+            ExitButton.FlatStyle = FlatStyle.Flat;
+            ExitButton.FlatAppearance.BorderSize = 0;
             ExitButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ExitButton.Location = new Point(278, 419);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(125, 42);
             ExitButton.TabIndex = 2;
-            ExitButton.Text = "Quit";
+            ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = false;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -87,7 +90,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // label2
             // 
@@ -99,7 +101,6 @@
             label2.Size = new Size(185, 19);
             label2.TabIndex = 4;
             label2.Text = "Student Management Portal";
-            label2.Click += label2_Click;
             // 
             // WelcomeForm
             // 
@@ -115,7 +116,7 @@
             Controls.Add(LogInButton);
             Name = "WelcomeForm";
             Text = "Welcome !!";
-            Load += Form1_Load;
+            Load += WelcomeForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

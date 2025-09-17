@@ -70,7 +70,6 @@ namespace StudentManagementSystem
             UsernameTextBox.Name = "UsernameTextBox";
             UsernameTextBox.Size = new Size(210, 23);
             UsernameTextBox.TabIndex = 3;
-            UsernameTextBox.TextChanged += UsernameTextBox_TextChanged;
             // 
             // PasswordTextBox
             // 
@@ -134,7 +133,6 @@ namespace StudentManagementSystem
             label2.Size = new Size(307, 46);
             label2.TabIndex = 9;
             label2.Text = "Skills International";
-            label2.Click += label2_Click;
             // 
             // pictureBox1
             // 
@@ -159,7 +157,6 @@ namespace StudentManagementSystem
             label1.Size = new Size(130, 32);
             label1.TabIndex = 11;
             label1.Text = "User Login";
-            label1.Click += label1_Click;
             // 
             // LoginForm
             // 
